@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TermsOfUseActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="17dp"
+        android:src="@drawable/left_arrow"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/signUpText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/onemobilebold"
+        android:text="회원가입"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/termsAndConditions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:fontFamily="@font/onemobiletitle"
+        android:text="약관동의가\n필요해요"
+        android:textSize="25sp"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toLeftOf="@+id/backButton"
+        app:layout_constraintTop_toBottomOf="@+id/backButton" />
+
+    <CheckBox
+        android:id="@+id/allAgree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/onemobilebold"
+        android:text="전체동의"
+        android:textSize="17sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/termsAndConditions" />
+
+    <View
+        android:id="@+id/firstBreakLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="28dp"
+        android:background="#4D000000"
+        app:layout_constraintTop_toBottomOf="@+id/allAgree" />
+
+    <CheckBox
+        android:id="@+id/guardAgree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/onemobilebold"
+        android:text="시흥 자율 방범대 이용 약관 동의 (필수)"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/firstBreakLine" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/firstRightBracket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        android:layout_marginRight="17dp"
+        android:src="@drawable/right_angle_bracket"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/firstBreakLine" />
+
+    <CheckBox
+        android:id="@+id/personalInfoAgree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="42dp"
+        android:fontFamily="@font/onemobilebold"
+        android:text="개인정보 수집 이용 동의 (필수)"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guardAgree" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/secondRightBracket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="53dp"
+        android:layout_marginRight="17dp"
+        android:src="@drawable/right_angle_bracket"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/firstRightBracket" />
+
+    <CheckBox
+        android:id="@+id/thirdPartyAgree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="42dp"
+        android:fontFamily="@font/onemobilebold"
+        android:text="개인정보 제3자 제공 동의 (선택)"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/personalInfoAgree" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/thirdRightBracket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="53dp"
+        android:layout_marginRight="17dp"
+        android:src="@drawable/right_angle_bracket"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/secondRightBracket" />
+
+    <CheckBox
+        android:id="@+id/marketingAgree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="42dp"
+        android:fontFamily="@font/onemobilebold"
+        android:text="마케팅 정보 메일, SMS 수신 동의 (선택)"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/thirdPartyAgree" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/fourthRightBracket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="53dp"
+        android:layout_marginRight="17dp"
+        android:src="@drawable/right_angle_bracket"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/thirdRightBracket" />
+
+    <View
+        android:id="@+id/secondBreakLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
+        android:background="#4D000000"
+        app:layout_constraintTop_toBottomOf="@+id/marketingAgree" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ageAgreeGroup"
+        app:layout_constraintTop_toBottomOf="@id/secondBreakLine"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="43dp"
+        >
+        <RadioButton
+            android:id="@+id/ageOver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/onemobiletitle"
+            android:text="만 14세 이상입니다."
+            android:textSize="15sp"
+            android:background="@drawable/button_background"
+            android:button="@null"
+            android:drawableStart="@drawable/custom_checkbox"
+            android:paddingVertical="20dp"
+            android:paddingRight="116dp"
+            android:paddingStart="13dp"
+            android:drawablePadding="13dp"
+            />
+
+        <RadioButton
+            android:id="@+id/ageBelow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/onemobiletitle"
+            android:text="만 14세 미만입니다."
+            android:textSize="15sp"
+            android:background="@drawable/button_background"
+            android:button="@null"
+            android:drawableStart="@drawable/custom_checkbox"
+            android:paddingVertical="20dp"
+            android:paddingRight="116dp"
+            android:paddingStart="13dp"
+            android:drawablePadding="13dp"
+            />
+    </RadioGroup>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nextButton"
+        android:fontFamily="@font/onemobiletitle"
+        android:text="다음으로"
+        android:background="@drawable/button_background"
+        app:layout_constraintTop_toBottomOf="@id/ageAgreeGroup"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="34dp"
+        android:paddingVertical="26dp"
+        android:paddingHorizontal="120dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

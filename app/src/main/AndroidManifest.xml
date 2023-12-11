@@ -13,10 +13,7 @@
         android:theme="@style/Theme.Siheungsecurity"
         tools:targetApi="31">
         <activity
-            android:name=".FirstLogin"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".TermsOfUseActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Siheungsecurity">
