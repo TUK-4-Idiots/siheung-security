@@ -1,5 +1,6 @@
 package com.siheung.siheung_security
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.CompoundButton
 import androidx.activity.ComponentActivity
@@ -18,6 +19,7 @@ class TermsOfUseActivity : ComponentActivity() {
         binding.personalInfoAgree.setOnClickListener { onCheckChanged(binding.personalInfoAgree) }
         binding.thirdPartyAgree.setOnClickListener { onCheckChanged(binding.thirdPartyAgree) }
         binding.marketingAgree.setOnClickListener { onCheckChanged(binding.marketingAgree) }
+
     }
 
     private fun onCheckChanged(compoundButton: CompoundButton) {
