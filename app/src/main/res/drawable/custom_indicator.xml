@@ -1,0 +1,7 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 선택된 아이템 모양 -->
+    <item android:drawable="@drawable/indicator_on" android:state_selected="true"/>
+
+    <!-- 선택되지 않은 아이템 모양 -->
+    <item android:drawable="@drawable/indicator_off"/>
+</selector>
