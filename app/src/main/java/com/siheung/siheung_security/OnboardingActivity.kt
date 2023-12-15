@@ -50,6 +50,3 @@ class OnboardingActivity : AppCompatActivity() {
         addToList("벌에 쏘인 범수", "", R.drawable.bum4)
     }
 }
-
-
-
