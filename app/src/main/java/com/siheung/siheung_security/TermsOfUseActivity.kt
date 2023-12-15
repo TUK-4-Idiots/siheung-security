@@ -14,29 +14,44 @@ class TermsOfUseActivity : ComponentActivity() {
         binding = ActivityTermsOfUseBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        var intent = Intent(this, SignUpActivity::class.java)
+
         binding.allAgree.setOnClickListener { onCheckChanged(binding.allAgree) }
         binding.guardAgree.setOnClickListener { onCheckChanged(binding.guardAgree) }
         binding.personalInfoAgree.setOnClickListener { onCheckChanged(binding.personalInfoAgree) }
         binding.thirdPartyAgree.setOnClickListener { onCheckChanged(binding.thirdPartyAgree) }
         binding.marketingAgree.setOnClickListener { onCheckChanged(binding.marketingAgree) }
 
+
+        binding.backButton.setOnClickListener {
+            intent = Intent(this, OnboardingActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        binding.nextButton.setOnClickListener{
+            startActivity(intent)
+            finish()
+        }
+
+
     }
 
     private fun onCheckChanged(compoundButton: CompoundButton) {
-        when(compoundButton) {
+        when (compoundButton) {
             binding.allAgree -> {
                 if (binding.allAgree.isChecked) {
                     binding.guardAgree.isChecked = true
                     binding.personalInfoAgree.isChecked = true
                     binding.thirdPartyAgree.isChecked = true
                     binding.marketingAgree.isChecked = true
-                }else {
+                } else {
                     binding.guardAgree.isChecked = false
                     binding.personalInfoAgree.isChecked = false
                     binding.thirdPartyAgree.isChecked = false
                     binding.marketingAgree.isChecked = false
                 }
             }
+
             else -> {
                 binding.allAgree.isChecked = (
                         binding.guardAgree.isChecked
@@ -46,4 +61,5 @@ class TermsOfUseActivity : ComponentActivity() {
             }
         }
     }
+
 }
