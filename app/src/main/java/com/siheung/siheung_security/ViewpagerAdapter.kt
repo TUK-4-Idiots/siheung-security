@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import org.w3c.dom.Text
 
 class ViewpagerAdapter(
     private var title: List<String>,
@@ -16,6 +17,7 @@ class ViewpagerAdapter(
     // ViewHolder 내부 클래스 정의
     inner class Pager2ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         // 아이템 뷰에서 사용하는 뷰 요소들을 선언합니다.
+        val itemTitle: TextView = itemView.findViewById(R.id.tvTitle)
         val itemDetails: TextView = itemView.findViewById(R.id.tvAbout) // 세부 내용 텍스트 뷰
         val itemImage: ImageView = itemView.findViewById(R.id.ivImage) // 이미지 뷰
     }
@@ -34,6 +36,7 @@ class ViewpagerAdapter(
 
     // 뷰홀더에 데이터 바인딩
     override fun onBindViewHolder(holder: Pager2ViewHolder, position: Int) {
+        holder.itemTitle.text = title[position]
         holder.itemDetails.text = details[position] // 세부 내용 설정
         holder.itemImage.setImageResource(images[position]) // 이미지 설정
 
