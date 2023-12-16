@@ -6,22 +6,38 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.viewpager2.widget.ViewPager2
+import com.siheung.siheung_security.databinding.ActivityFirstViewBinding
+import com.siheung.siheung_security.databinding.ActivityOnboardingBinding
+import com.siheung.siheung_security.databinding.ActivitySignUpCompleteBinding
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+
+private lateinit var binding : ActivityOnboardingBinding
 
 class OnboardingActivity : AppCompatActivity() {
     // 타이틀, 설명, 이미지 리스트 초기화
     private var titleList = mutableListOf<String>()
     private var descList = mutableListOf<String>()
     private var imagesList = mutableListOf<Int>()
-    lateinit var signuptext:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_onboarding)
 
-        signuptext = findViewById(R.id.signupText)
-        val intent = Intent(this, TermsOfUseActivity::class.java)
-        signuptext.setOnClickListener{startActivity(intent)}
+        binding = ActivityOnboardingBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+
+        binding.loginButton.setOnClickListener{
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        binding.signupText.setOnClickListener{
+            val intent = Intent(this, TermsOfUseActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         // XML에서 뷰 요소들을 가져옵니다.
         val dotsIndicator = findViewById<WormDotsIndicator>(R.id.dots_indicator)
@@ -44,12 +60,9 @@ class OnboardingActivity : AppCompatActivity() {
 
     // 데이터를 리스트에 추가하는 함수
     private fun postToList() {
-        addToList("김범수 아님", "", R.drawable.bum)
-        addToList("범석원 짤", "", R.drawable.bum2)
-        addToList("범일리언", "", R.drawable.bum3)
-        addToList("벌에 쏘인 범수", "", R.drawable.bum4)
+        addToList("시흥시 치안,", "어떻게 생각하시나요?", R.drawable.bum)
+        addToList("이젠, 어플을 키세요", "문제가 발생 하면 도와드립니다", R.drawable.bum2)
+        addToList("언제 어디서나", "도움을 요청 할 수 있고", R.drawable.bum3)
+        addToList("가까운 방범대의", "위치정보를 표시해드립니다", R.drawable.bum4)
     }
 }
-
-
-

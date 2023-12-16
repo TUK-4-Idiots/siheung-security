@@ -2,6 +2,7 @@ package com.siheung.siheung_security
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.CompoundButton
 import androidx.activity.ComponentActivity
 import com.siheung.siheung_security.databinding.ActivityTermsOfUseBinding
@@ -21,8 +22,7 @@ class TermsOfUseActivity : ComponentActivity() {
         binding.personalInfoAgree.setOnClickListener { onCheckChanged(binding.personalInfoAgree) }
         binding.thirdPartyAgree.setOnClickListener { onCheckChanged(binding.thirdPartyAgree) }
         binding.marketingAgree.setOnClickListener { onCheckChanged(binding.marketingAgree) }
-
-
+        
         binding.backButton.setOnClickListener {
             intent = Intent(this, OnboardingActivity::class.java)
             startActivity(intent)
@@ -32,7 +32,6 @@ class TermsOfUseActivity : ComponentActivity() {
             startActivity(intent)
             finish()
         }
-
 
     }
 

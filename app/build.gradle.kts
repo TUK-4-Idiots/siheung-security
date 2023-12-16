@@ -72,8 +72,12 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+    //온보딩 화면 라이브러리
     implementation("androidx.viewpager2:viewpager2:1.0.0")
     implementation("com.tbuonomo:dotsindicator:5.0")
+    //간결하고 직관적인 코드를 위한 확장 프로그램
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.fragment:fragment-ktx:1.6.2")
+    //스플래시 화면 라이브러리
+    implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.20")
 }

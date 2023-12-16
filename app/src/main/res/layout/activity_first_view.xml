@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="시흥시 자율 방범대"
+        android:textColor="#000000"
+        android:fontFamily="@font/onemobiletitle"
+        android:textSize="25dp"
+        android:paddingLeft="22dp"
+        android:paddingTop="71dp"></TextView>
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="어플로 안전하게"
+        android:textColor="#000000"
+        android:fontFamily="@font/onemobiletitle"
+        android:textSize="25dp"
+        android:paddingLeft="22dp"
+        android:paddingBottom="18dp"
+        app:layout_constraintTop_toBottomOf="@+id/text1"></TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="시흥시 방범대 어플을 사용하면 어디서든 안전합니다"
+        android:paddingLeft="22dp"
+        android:fontFamily="@font/onemobiletitle"
+        app:layout_constraintTop_toBottomOf="@+id/text2"></TextView>
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="289dp"
+        android:layout_height="51dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="144dp"
+        android:background="@drawable/button_background_blue"
+        android:padding="13dp"
+        android:text="시작하기"
+        android:fontFamily="@font/sbaggro"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"></Button>
+</androidx.constraintlayout.widget.ConstraintLayout>
