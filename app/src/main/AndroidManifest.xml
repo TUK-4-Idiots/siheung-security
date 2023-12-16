@@ -5,9 +5,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/siheung_security_icon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/siheung_security_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat"
         tools:targetApi="31">
@@ -38,7 +38,15 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
-
+        <activity
+            android:name=".SignUpCompleteActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
     </application>
-
 </manifest>

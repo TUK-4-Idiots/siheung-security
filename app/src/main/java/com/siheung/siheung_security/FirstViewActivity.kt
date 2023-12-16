@@ -14,7 +14,7 @@ class FirstViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_first_view)
 
-        startbutton = findViewById(R.id.startbutton)
+        startbutton = findViewById(R.id.startButton)
         val intent = Intent(this, OnboardingActivity::class.java)
         startbutton.setOnClickListener{startActivity(intent)}
     }
