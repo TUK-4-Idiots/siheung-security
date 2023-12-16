@@ -63,6 +63,8 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.8.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("org.jetbrains:annotations:15.0")
+    implementation("org.jetbrains:annotations:15.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -73,7 +75,9 @@ dependencies {
     //온보딩 화면 라이브러리
     implementation("androidx.viewpager2:viewpager2:1.0.0")
     implementation("com.tbuonomo:dotsindicator:5.0")
+    //간결하고 직관적인 코드를 위한 확장 프로그램
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("androidx.fragment:fragment-ktx:1.6.2")
     //스플래시 화면 라이브러리
     implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.20")
-
 }
