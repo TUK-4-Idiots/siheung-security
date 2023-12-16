@@ -1,7 +1,7 @@
 package com.siheung.siheung_security.fragments
 
+import java.util.regex.Pattern
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,32 +15,69 @@ import com.siheung.siheung_security.databinding.FragmentButtonBinding
 class FragmentButton: Fragment() {
     private var _binding: FragmentButtonBinding? = null
     private val binding get() = _binding!!
-
     private val viewModel: SignUpViewModel by activityViewModels()
+    private val emailPattern = "[0-9a-zA-Z]+(.[_a-z0-9-]+)*@(?:\\w+\\.)+\\w+$"
+    private val pwPattern = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!%*#?&.])[A-Za-z[0-9]$@$!%*#?&.]{8,20}$"
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentButtonBinding.inflate(layoutInflater, container, false)
 
-        viewModel.getLength().observe(viewLifecycleOwner, Observer { length ->
-            Log.d("tag", "$length")
+        viewModel.getNameLength().observe(viewLifecycleOwner, Observer { length ->
             if (length >= 2) {
-                binding.nextButton.isEnabled = true
-                binding.nextButton.setBackgroundResource(R.drawable.button_background_blue)
+                changeNextButtonState(true)
             }
             else {
-                binding.nextButton.isEnabled = false
-                binding.nextButton.setBackgroundResource(R.drawable.button_background_disabled)
+                changeNextButtonState(false)
+            }
+        })
+
+        viewModel.getEmail().observe(viewLifecycleOwner, Observer { email ->
+            if (Pattern.matches(emailPattern, email)) {
+                changeNextButtonState(true)
+            }
+            else {
+                changeNextButtonState(false)
+            }
+        })
+
+        viewModel.getPasswd().observe(viewLifecycleOwner, Observer { passwd ->
+            if (passwd.length >= 8 && Pattern.matches(pwPattern, passwd) && passwd == viewModel.getVerifyPasswd().value) {
+                changeNextButtonState(true)
+            }
+            else {
+                changeNextButtonState(false)
+            }
+        })
+
+        viewModel.getVerifyPasswd().observe(viewLifecycleOwner, Observer { verifyPasswd ->
+            if (viewModel.getPasswd().value == verifyPasswd) {
+                changeNextButtonState(true)
+            }
+            else {
+                changeNextButtonState(false)
             }
         })
 
         binding.nextButton.setOnClickListener {
             viewModel.nextStep()
+            changeNextButtonState(false)
         }
         return binding.root
+    }
+
+    private fun changeNextButtonState(able: Boolean) {
+        if (able) {
+            binding.nextButton.isEnabled = true
+            binding.nextButton.setBackgroundResource(R.drawable.button_background_blue)
+        }
+        else {
+            binding.nextButton.isEnabled = false
+            binding.nextButton.setBackgroundResource(R.drawable.button_background_disabled)
+        }
     }
 
 

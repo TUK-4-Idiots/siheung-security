@@ -59,33 +59,142 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         />
-    <TextView
-        android:id="@+id/nameInputTitle"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameInputLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="이름"
-        android:textColor="#000"
-        android:fontFamily="@font/onemobiletitle"
-        android:textSize="17sp"
         app:layout_constraintTop_toBottomOf="@+id/signUpActivityTitle"
-        android:layout_marginTop="44dp"
-        app:layout_constraintLeft_toLeftOf="@+id/backButton"
-        android:layout_marginLeft="8dp"
-        />
-    <EditText
-        android:id="@+id/nameInput"
+        android:layout_marginTop="60dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+        <EditText
+            android:id="@+id/nameInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="385dp"
+            android:height="40dp"
+            android:background="@drawable/button_background_white"
+            android:fontFamily="@font/nanumbarungothic"
+            android:hint="이름을 입력해주세요."
+            android:paddingStart="9dp"
+            android:textSize="14sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailInputLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="이름을 입력해주세요."
-        android:fontFamily="@font/onemobilebold"
-        android:textSize="14sp"
-        android:background="@drawable/button_background_white"
-        app:layout_constraintTop_toBottomOf="@+id/nameInputTitle"
-        android:layout_marginTop="5dp"
-        app:layout_constraintLeft_toLeftOf="@+id/nameInputTitle"
-        android:paddingVertical="12dp"
-        android:paddingStart="9dp"
-        android:paddingRight="250dp"
+        app:layout_constraintTop_toBottomOf="@+id/nameInputLayout"
+        android:layout_marginTop="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:visibility="gone"
+        >
+        <EditText
+            android:id="@+id/emailInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="385dp"
+            android:height="40dp"
+            android:background="@drawable/button_background_white"
+            android:fontFamily="@font/nanumbarungothic"
+            android:hint="이메일을 입력해주세요."
+            android:paddingStart="9dp"
+            android:textSize="14sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/emailInputGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="올바른 이메일 형식이 아닙니다."
+        android:textColor="@color/invalid"
+        android:fontFamily="@font/nanumbarungothic"
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@+id/emailInputLayout"
+        android:layout_marginTop="7dp"
+        app:layout_constraintLeft_toLeftOf="@+id/emailInputLayout"
+        android:visibility="gone"
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordInputLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/emailInputLayout"
+        android:layout_marginTop="30dp"
+        app:layout_constraintLeft_toLeftOf="@+id/emailInputLayout"
+        android:visibility="gone"
+        app:endIconMode="password_toggle"
+        >
+        <EditText
+            android:id="@+id/passwordInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="385dp"
+            android:height="40dp"
+            android:hint="비밀번호를 입력해주세요."
+            android:fontFamily="@font/nanumbarungothic"
+            android:textSize="14sp"
+            android:background="@drawable/button_background_white"
+            app:layout_constraintTop_toBottomOf="@+id/passwordInputTitle"
+            android:paddingVertical="12dp"
+            android:paddingStart="9dp"
+            android:inputType="textPassword"
+            tools:ignore="MissingConstraints"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/passwordInputGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="영문, 숫자와 특수문자를 포함하여 8자리 이상 입력해주세요."
+        android:textColor="@color/invalid"
+        android:fontFamily="@font/nanumbarungothic"
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout"
+        android:layout_marginTop="7dp"
+        app:layout_constraintLeft_toLeftOf="@+id/passwordInputLayout"
+        android:visibility="gone"
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/verifyPasswordInputLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/passwordInputLayout"
+        android:layout_marginTop="30dp"
+        app:layout_constraintLeft_toLeftOf="@+id/passwordInputLayout"
+        android:visibility="gone"
+        app:endIconMode="password_toggle"
+        >
+            <EditText
+                android:id="@+id/verifyPasswordInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:width="385dp"
+                android:height="40dp"
+                android:hint="비밀번호를 한 번 더 입력해 주세요."
+                android:fontFamily="@font/nanumbarungothic"
+                android:textSize="14sp"
+                android:background="@drawable/button_background_white"
+                android:paddingVertical="12dp"
+                android:paddingStart="9dp"
+                android:inputType="textPassword"
+                tools:ignore="MissingConstraints"
+                />
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/verifyPasswordInputGuide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호가 일치하지 않습니다."
+        android:textColor="@color/invalid"
+        android:fontFamily="@font/nanumbarungothic"
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@+id/verifyPasswordInputLayout"
+        android:layout_marginTop="7dp"
+        app:layout_constraintLeft_toLeftOf="@+id/verifyPasswordInputLayout"
+        android:visibility="gone"
         />
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nextButton"
@@ -96,4 +205,5 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
