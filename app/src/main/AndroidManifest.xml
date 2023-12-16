@@ -27,7 +27,7 @@
             android:name=".TermsOfUseActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Siheungsecurity">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

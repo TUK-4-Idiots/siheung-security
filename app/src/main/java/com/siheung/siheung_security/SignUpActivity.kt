@@ -1,15 +1,23 @@
 package com.siheung.siheung_security
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ProgressBar
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentTransaction
+import androidx.fragment.app.commit
+import androidx.lifecycle.Observer
+import com.google.android.material.internal.TextWatcherAdapter
 import com.siheung.siheung_security.databinding.ActivitySignUpBinding
-import com.siheung.siheung_security.fragments.ProgressFragment
+import com.siheung.siheung_security.fragments.FragmentButton
 
-private lateinit var binding : ActivitySignUpBinding
+
 
 class SignUpActivity: AppCompatActivity() {
+    private lateinit var binding : ActivitySignUpBinding
+    private val viewModel: SignUpViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
@@ -21,26 +29,37 @@ class SignUpActivity: AppCompatActivity() {
             finish()
         }
 
+        binding.nameInput.addTextChangedListener(@SuppressLint("RestrictedApi")
+        object : TextWatcherAdapter() {
+            override fun onTextChanged(s: CharSequence, p1: Int, p2: Int, p3: Int) {
+                if (s != null) {
+                    viewModel.updateLength(s.length)
+                }
+            }
+        })
+
+        viewModel.getProgress().observe(this, Observer { progress ->
+            var startPoint = progress - 30
+
+            binding.progressBar.progress = progress
+            animateProgressBar(startPoint.toFloat(), progress.toFloat())
+            binding.progressBarPercent.text = "$progress%"
+        })
+
+
         if(savedInstanceState == null) {
-            // FragmentManager를 통해서 FragmentTransaction 획득하기
-            val fragmentTransaction: FragmentTransaction =
-                supportFragmentManager.beginTransaction()
-            // add를 통해 container에 Fragment 추가
-            fragmentTransaction.add(R.id.progressBar, ProgressFragment())
-            fragmentTransaction.setReorderingAllowed(true)
-            // commit을 통해 transaction 등록
-            fragmentTransaction.commit()
-
-
-//             FragmentKTX의 기능을 사용하여 위의 코드를 깔끔하게 변경
-//             commit 함수 내부에 FragmentTransaction을 수신객체로 받는
-//             함수 타입이 있어서 아래와 같이 작성 가능
-//            supportFragmentManager.commit {
-//                setReorderingAllowed(true)
-//                add(R.id.fragment_container, FirstFragment())
-//            }
+            supportFragmentManager.commit {
+                setReorderingAllowed(true)
+                add(R.id.nextButton, FragmentButton())
+            }
         }
     }
 
+    private fun animateProgressBar(startPoint: Float, endPoint: Float) {
+        val progressBar = findViewById<ProgressBar>(R.id.progressBar)
+        val anim = AnimateProgressBar(progressBar, startPoint, endPoint)
+        anim.duration = 1000
+        progressBar.startAnimation(anim)
+    }
 
 }
