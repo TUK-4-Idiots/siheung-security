@@ -28,7 +28,7 @@
         android:layout_marginRight="225dp"
         />
     <EditText
-        android:id="@+id/edit_login1"
+        android:id="@+id/edit_Id"
         android:layout_width="289dp"
         android:layout_height="39dp"
         android:background="@drawable/button_login"
@@ -43,7 +43,7 @@
         app:layout_constraintRight_toRightOf="parent"
         />
     <EditText
-        android:id="@+id/edit_login2"
+        android:id="@+id/edit_Pw"
         android:layout_width="289dp"
         android:layout_height="39dp"
         android:background="@drawable/button_login"
@@ -66,7 +66,7 @@
         android:textColor="#FFFFFF"
         android:fontFamily="@font/sbaggro"
         android:background="@drawable/button_background_blue"
-        app:layout_constraintTop_toBottomOf="@+id/edit_login2"
+        app:layout_constraintTop_toBottomOf="@+id/edit_Pw"
         android:layout_marginTop="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="36dp"

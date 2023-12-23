@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.siheung.siheung_security.databinding.ActivityFirstViewBinding
 import com.siheung.siheung_security.databinding.ActivityOnboardingBinding
@@ -13,13 +15,14 @@ import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 
 private lateinit var binding : ActivityOnboardingBinding
 
-class OnboardingActivity : AppCompatActivity() {
+class OnboardingActivity : FragmentActivity()  {
     // 타이틀, 설명, 이미지 리스트 초기화
     private var titleList = mutableListOf<String>()
     private var descList = mutableListOf<String>()
     private var imagesList = mutableListOf<Int>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private lateinit var viewpager2: ViewPager2
+    override fun onCreate(savedInstanceState: Bundle?)  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_onboarding)
 
@@ -60,9 +63,9 @@ class OnboardingActivity : AppCompatActivity() {
 
     // 데이터를 리스트에 추가하는 함수
     private fun postToList() {
-        addToList("시흥시 치안,", "어떻게 생각하시나요?", R.drawable.bum)
-        addToList("이젠, 어플을 키세요", "문제가 발생 하면 도와드립니다", R.drawable.bum2)
-        addToList("언제 어디서나", "도움을 요청 할 수 있고", R.drawable.bum3)
-        addToList("가까운 방범대의", "위치정보를 표시해드립니다", R.drawable.bum4)
+        addToList("시흥시 치안,", "어떻게 생각하시나요?", R.drawable.onboarding1)
+        addToList("이젠, 어플을 키세요", "문제가 발생 하면 도와드립니다", R.drawable.onboarding2)
+        addToList("언제 어디서나", "도움을 요청 할 수 있고", R.drawable.onboarding3)
+        addToList("가까운 방범대의", "위치정보를 표시해드립니다", R.drawable.onboarding4)
     }
 }

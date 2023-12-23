@@ -2,16 +2,14 @@ package com.siheung.siheung_security
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import com.siheung.siheung_security.databinding.ActivityLoginBinding
-import com.siheung.siheung_security.fragments.FragmentButton
 import com.siheung.siheung_security.fragments.FragmentGoogleLogin
 
-private lateinit var binding : ActivityLoginBinding
 
+private lateinit var binding : ActivityLoginBinding
 
 class LoginActivity: AppCompatActivity() {
 
@@ -23,6 +21,8 @@ class LoginActivity: AppCompatActivity() {
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        // x 버튼을 누를 때 EditText 내용을 지우는 기능 추가
+
 
         supportActionBar?.hide()
         //뒤로가기 버튼
@@ -33,7 +33,7 @@ class LoginActivity: AppCompatActivity() {
         }
         //로그인 버튼
         binding.loginButton2.setOnClickListener {
-            val intent = Intent(this, SignUpCompleteActivity::class.java)
+            val intent = Intent(this, MapViewActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -49,6 +49,7 @@ class LoginActivity: AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
 
         binding.loginButton2.setOnClickListener {
             var inputId = binding.editLogin1.text
@@ -77,3 +78,7 @@ class LoginActivity: AppCompatActivity() {
 
 
 }
+
+
+}
+
