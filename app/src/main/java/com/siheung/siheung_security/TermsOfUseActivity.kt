@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CompoundButton
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import com.siheung.siheung_security.databinding.ActivityTermsOfUseBinding
 
@@ -29,10 +30,15 @@ class TermsOfUseActivity : ComponentActivity() {
             finish()
         }
         binding.nextButton.setOnClickListener{
-            startActivity(intent)
-            finish()
+            if (binding.allAgree.isChecked && binding.ageOver.isChecked) {
+                startActivity(intent)
+                finish()
+            }
+            else if (binding.allAgree.isChecked && !binding.ageBelow.isChecked)
+                Toast.makeText(this, "만 14세 이상부터 사용 가능합니다.", Toast.LENGTH_SHORT).show()
+            else
+                Toast.makeText(this, "먼저 약관에 동의해주세요.", Toast.LENGTH_SHORT).show()
         }
-
     }
 
     private fun onCheckChanged(compoundButton: CompoundButton) {

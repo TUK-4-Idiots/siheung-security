@@ -2,6 +2,9 @@ package com.siheung.siheung_security.fragments
 
 import java.util.regex.Pattern
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,8 +29,8 @@ class FragmentButton: Fragment() {
     ): View {
         _binding = FragmentButtonBinding.inflate(layoutInflater, container, false)
 
-        viewModel.getNameLength().observe(viewLifecycleOwner, Observer { length ->
-            if (length >= 2) {
+        viewModel.getName().observe(viewLifecycleOwner, Observer { name ->
+            if (name.length >= 2) {
                 changeNextButtonState(true)
             }
             else {

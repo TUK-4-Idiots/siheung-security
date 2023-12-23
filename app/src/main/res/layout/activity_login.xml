@@ -26,35 +26,37 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginRight="225dp"
-        ></TextView>
+        />
     <EditText
         android:id="@+id/edit_login1"
         android:layout_width="289dp"
         android:layout_height="39dp"
         android:background="@drawable/button_login"
-        android:hint="   아이디"
+        android:hint="이메일"
         android:textSize="14dp"
-        android:textColor="#4D000000"
+        android:textColor="#000000"
         android:fontFamily="@font/onemobiletitle"
+        android:paddingStart="15dp"
         app:layout_constraintTop_toBottomOf="@+id/LoginText"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="13dp"
         app:layout_constraintRight_toRightOf="parent"
-        ></EditText>
+        />
     <EditText
         android:id="@+id/edit_login2"
         android:layout_width="289dp"
         android:layout_height="39dp"
         android:background="@drawable/button_login"
-        android:hint="   비밀번호"
+        android:hint="비밀번호"
         android:textSize="14dp"
-        android:textColor="#4D000000"
+        android:textColor="#000000"
         android:fontFamily="@font/onemobiletitle"
+        android:paddingStart="15dp"
         app:layout_constraintTop_toBottomOf="@+id/edit_login1"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="27dp"
         app:layout_constraintRight_toRightOf="parent"
-        ></EditText>
+        />
     <Button
         android:id="@+id/loginButton2"
         android:layout_width="289dp"
@@ -69,14 +71,40 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="36dp"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="36dp"></Button>
+        android:layout_marginRight="36dp"/>
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/googleLogin"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintLeft_toLeftOf="@+id/loginButton2"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton2" />
+    <ImageView
+        android:id="@+id/kakaoLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/kakao_login"
+        app:layout_constraintTop_toBottomOf="@id/loginButton2"
+        app:layout_constraintLeft_toLeftOf="@id/googleLogin"
+        app:layout_constraintRight_toRightOf="@id/githubLogin"
+        android:layout_marginTop="30dp"
+        />
+    <ImageView
+        android:id="@+id/githubLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/github_login"
+        app:layout_constraintTop_toBottomOf="@id/loginButton2"
+        app:layout_constraintRight_toRightOf="@id/loginButton2"
+        android:layout_marginTop="30dp"
+        />
     <Button
         android:id="@+id/lost_Id"
         android:layout_width="68dp"
         android:layout_height="16dp"
         android:text="아이디 찾기"
         android:fontFamily="@font/onemobiletitle"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton2"
+        app:layout_constraintTop_toBottomOf="@+id/kakaoLogin"
         android:textColor="#80000000"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="83dp"
@@ -84,7 +112,7 @@
         android:layout_marginTop="27dp"
         android:textSize="13dp"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginRight="211dp"></Button>
+        android:layout_marginRight="211dp"/>
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -92,16 +120,15 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="28dp"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton2"
-        >
-    </ImageView>
+        app:layout_constraintTop_toBottomOf="@+id/kakaoLogin"
+      />
     <Button
         android:id="@+id/lost_Password"
         android:layout_width="78dp"
         android:layout_height="14dp"
         android:text="비밀번호 찾기"
         android:fontFamily="@font/onemobiletitle"
-        app:layout_constraintTop_toBottomOf="@+id/loginButton2"
+        app:layout_constraintTop_toBottomOf="@+id/kakaoLogin"
         android:background="#00ff0000"
         android:textColor="#80000000"
         android:layout_marginTop="27dp"
@@ -110,7 +137,7 @@
         android:layout_marginRight="77dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="205dp"
-        ></Button>
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

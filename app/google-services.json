@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "556919562025",
+    "project_id": "siheung-security-74216",
+    "storage_bucket": "siheung-security-74216.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556919562025:android:8430d50487d9f51e006138",
+        "android_client_info": {
+          "package_name": "com.siheung.siheung_security"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkN92TdgKz6PDfOsNuaAkhwUp9agfiyCQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
