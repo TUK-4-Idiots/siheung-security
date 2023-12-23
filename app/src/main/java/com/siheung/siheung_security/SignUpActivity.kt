@@ -4,7 +4,11 @@ import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.os.Looper.getMainLooper
 import android.text.Editable
+import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -16,6 +20,11 @@ import androidx.lifecycle.Observer
 import com.google.android.material.internal.TextWatcherAdapter
 import com.siheung.siheung_security.databinding.ActivitySignUpBinding
 import com.siheung.siheung_security.fragments.FragmentButton
+import java.sql.Connection
+import java.sql.DriverManager
+import java.sql.ResultSet
+import java.sql.SQLException
+import java.sql.Statement
 import java.util.regex.Pattern
 
 
@@ -31,6 +40,9 @@ class SignUpActivity: AppCompatActivity() {
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val dbHelper = DBHelper(this, "siheung-security", null, 1)
+        var database = dbHelper.writableDatabase
+
         binding.backButton.setOnClickListener {
             intent = Intent(this, TermsOfUseActivity::class.java)
             startActivity(intent)
@@ -40,7 +52,7 @@ class SignUpActivity: AppCompatActivity() {
         binding.nameInput.addTextChangedListener(@SuppressLint("RestrictedApi")
         object : TextWatcherAdapter() {
             override fun onTextChanged(s: CharSequence, p1: Int, p2: Int, p3: Int) {
-                viewModel.updateNameLength(s.length)
+                viewModel.updateName(s.toString())
             }
         })
 
@@ -103,6 +115,14 @@ class SignUpActivity: AppCompatActivity() {
                     binding.passwordInputLayout.visibility = View.VISIBLE
                     binding.verifyPasswordInputLayout.visibility = View.VISIBLE
                 }
+                99 -> {
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        viewModel.signUpUser()
+                        intent = Intent(this, SignUpCompleteActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    }, 1500)
+                }
             }
         })
 
@@ -129,4 +149,5 @@ class SignUpActivity: AppCompatActivity() {
         }
         animator.start()
     }
+
 }

@@ -1,5 +1,6 @@
 plugins {
     id("com.android.application")
+    id("com.google.gms.google-services")
     id("org.jetbrains.kotlin.android")
 }
 
@@ -81,6 +82,11 @@ dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.fragment:fragment-ktx:1.6.2")
     //스플래시 화면 라이브러리
+    implementation("com.google.gms:google-services:4.3.15")
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.android.gms:play-services-auth:20.5.0")
     implementation ("pl.droidsonroids.gif:android-gif-drawable:1.2.28")
     //네이버 맵 api라이브러리
     implementation("com.naver.maps:map-sdk:3.17.0")
