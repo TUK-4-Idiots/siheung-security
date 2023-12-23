@@ -52,8 +52,8 @@ class LoginActivity: AppCompatActivity() {
 
 
         binding.loginButton2.setOnClickListener {
-            var inputId = binding.editLogin1.text
-            var inputPasswd = binding.editLogin2.text
+            var inputId = binding.editId.text
+            var inputPasswd = binding.editPw.text
 
             if (dbHelper.login(database, inputId.toString(), inputPasswd.toString())) {
                 Toast.makeText(this, "로그인 성공!", Toast.LENGTH_SHORT).show()
@@ -63,8 +63,8 @@ class LoginActivity: AppCompatActivity() {
             }
             else {
                 Toast.makeText(this, "아이디 또는 비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show()
-                binding.editLogin1.text = null
-                binding.editLogin2.text = null
+                binding.editId.text = null
+                binding.editPw.text = null
             }
         }
 
@@ -75,9 +75,6 @@ class LoginActivity: AppCompatActivity() {
             }
         }
     }
-
-
-}
 
 
 }
