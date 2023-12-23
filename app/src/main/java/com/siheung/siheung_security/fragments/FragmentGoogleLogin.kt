@@ -13,6 +13,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.siheung.siheung_security.LoginActivity
+import com.siheung.siheung_security.MapViewActivity
 import com.siheung.siheung_security.databinding.FragmentGoogleLoginBinding
 
 class FragmentGoogleLogin: Fragment() {
@@ -26,7 +27,6 @@ class FragmentGoogleLogin: Fragment() {
 
             val userName = account.givenName
             val email = account.email
-
 
             moveSignUpActivity()
         } catch (e: ApiException) {
@@ -66,7 +66,7 @@ class FragmentGoogleLogin: Fragment() {
 
     private fun moveSignUpActivity() {
         requireActivity().run {
-            startActivity(Intent(requireContext(), LoginActivity::class.java))
+            startActivity(Intent(requireContext(), MapViewActivity::class.java))
             finish()
         }
     }

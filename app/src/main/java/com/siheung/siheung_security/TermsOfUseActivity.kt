@@ -30,12 +30,13 @@ class TermsOfUseActivity : ComponentActivity() {
             finish()
         }
         binding.nextButton.setOnClickListener{
-            if (binding.allAgree.isChecked && binding.ageOver.isChecked) {
+            if (binding.guardAgree.isChecked && binding.personalInfoAgree.isChecked && binding.ageBelow.isChecked) {
+                Toast.makeText(this, "만 14세 이상부터 사용 가능합니다.", Toast.LENGTH_SHORT).show()
+            }
+            else if (binding.guardAgree.isChecked && binding.personalInfoAgree.isChecked && binding.ageOver.isChecked) {
                 startActivity(intent)
                 finish()
             }
-            else if (binding.allAgree.isChecked && !binding.ageBelow.isChecked)
-                Toast.makeText(this, "만 14세 이상부터 사용 가능합니다.", Toast.LENGTH_SHORT).show()
             else
                 Toast.makeText(this, "먼저 약관에 동의해주세요.", Toast.LENGTH_SHORT).show()
         }

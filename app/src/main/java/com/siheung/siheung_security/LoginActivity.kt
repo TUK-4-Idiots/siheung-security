@@ -57,7 +57,7 @@ class LoginActivity: AppCompatActivity() {
 
             if (dbHelper.login(database, inputId.toString(), inputPasswd.toString())) {
                 Toast.makeText(this, "로그인 성공!", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, SignUpCompleteActivity::class.java)
+                val intent = Intent(this, MapViewActivity::class.java)
                 startActivity(intent)
                 finish()
             }
